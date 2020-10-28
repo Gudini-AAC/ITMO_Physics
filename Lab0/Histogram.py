@@ -1,11 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-f = open('data.txt', 'r')
-
-data = []
-for line in f:
-	data.append(float(line))
+data = [ float(line) for line in open('data.txt', 'r') ]
 
 columnsCount = int(len(data) ** 0.5)
 columnWidth = (data[-1] - data[0]) / columnsCount

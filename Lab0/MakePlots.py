@@ -56,8 +56,10 @@ studentFactor = step / sigma
 
 def calcSigma(num):
 	cnt = 0
+	lowerBound = average - num * stdDev
+	upperBound = average + num * stdDev
 	for val in data:
-		if (val > average - num * stdDeviation and val < average + num * stdDeviation):
+		if val > lowerBound and val < upperBound:
 		 	cnt += 1
 
 	return cnt / len(data)
